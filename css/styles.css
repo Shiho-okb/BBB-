@@ -1,0 +1,81 @@
+/*-------------------------------------------
+共通
+-------------------------------------------*/
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #333;
+  font-family:
+    "游ゴシック体",
+    "YuGothic",
+    "游ゴシック Medium",
+    "Yu Gothic Medium",
+    "游ゴシック",
+    "Yu Gothic",
+    "メイリオ",
+    sans-serif;
+  letter-spacing: 0.1em;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+/*-------------------------------------------
+ヘッダー
+-------------------------------------------*/
+#header {
+  height: 100px;
+  padding: 40px 0 0 50px;
+}
+
+#header .site-title {
+  width: 100px;
+  line-height: 1px;
+}
+
+#header .site-title a {
+  display: block;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+  width: 100px;
+  height: 100px;
+  background-color: #ff2a2a;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hamburger span {
+  width: 50px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  left: 25px;
+  transition: 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  top: 36px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 64px;
+}
