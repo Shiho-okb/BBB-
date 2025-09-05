@@ -35,6 +35,28 @@ img {
   vertical-align: bottom;
 }
 
+/* セクションタイトル用の共通クラス */
+.section-title {
+  font-size: 2.25rem;
+  margin-bottom: 100px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 100px;
+  height: 3px;
+  background-color: #333;
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+
 /*-------------------------------------------
 ヘッダー
 -------------------------------------------*/
@@ -177,7 +199,7 @@ jQueryで #navi にactiveクラスを追加して、メニューを表示させ�
 
 
 /*-------------------------------------------
-メインビジュアルエリア
+メインビジュアル
 -------------------------------------------*/
 #mainvisual {
   height: 720px;
@@ -290,5 +312,94 @@ jQueryで #navi にactiveクラスを追加して、メニューを表示させ�
   }
   100% {
     opacity: 0;
+  }
+}
+
+
+/*-------------------------------------------
+BBBが選ばれる理由
+-------------------------------------------*/
+#reason {
+  margin-bottom: 120px;
+}
+
+#reason .bg {
+  background-color: #ff2a2a;
+  padding: 80px 0;
+}
+
+/* 最初は「opacity: 0;」で非表示にしておく */
+#reason .slide {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 5%;
+  opacity: 0;
+}
+
+#reason .slide img {
+  width: auto;
+  height: 60px;
+  margin-right: 30px;
+}
+
+#reason .slide .title {
+  color: #ff2a2a;
+  display: block;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+#reason .slide .text {
+  display: block;
+  font-size: 1.125rem;
+}
+
+/* 左側のスライド */
+#reason .inview-slide-left {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 40px;
+}
+
+/* slide-right → アニメーション名（@keyframes slide-right { ... } を参照）
+0.5s → アニメーションの再生時間（0.5秒で動きが完了）
+ease-out → イージング（動きがだんだん遅くなる）
+0s → 遅延時間（待ち時間なしで開始）
+1 → 再生回数（1回だけ実行）
+forwards → 再生が終わったあと、最後の状態を維持する */
+#reason .slide-left {
+  animation: slide-left 0.5s ease-out 0s 1 forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 右側のスライド */
+#reason .inview-slide-right {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+#reason .slide-right {
+  animation: slide-right 0.5s ease-out 0s 1 forwards;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(100%);
   }
 }
